@@ -1,1 +1,1 @@
-# MLH-hackathon-project
+# MLH hackathon project
