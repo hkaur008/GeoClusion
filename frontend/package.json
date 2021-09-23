@@ -1,0 +1,92 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/gapi.auth2": "^0.0.55",
+    "@types/react-modal": "^3.12.1",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.1.1",
+    "emotion-theming": "^11.0.0",
+    "eslint": "^7.21.0",
+    "prettier": "^2.2.1",
+    "rc-dropdown": "^3.2.0",
+    "react": "^17.0.1",
+    "react-autosuggest": "^10.1.0",
+    "react-awesome-button": "^6.5.1",
+    "react-bootstrap": "^1.6.3",
+    "react-checkbox-component": "^0.1.15",
+    "react-dom": "^17.0.1",
+    "react-google-button": "^0.7.2",
+    "react-google-login": "^5.2.2",
+    "react-icons": "^4.1.0",
+    "react-media-hook": "^0.4.9",
+    "react-modal": "^3.14.3",
+    "react-notifications": "^1.7.2",
+    "react-particles-js": "^3.5.3",
+    "react-pro-sidebar": "^0.7.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-tag-autocomplete": "^6.1.0",
+    "react-tsparticles": "^1.35.1",
+    "reactjs-popup": "^2.0.5",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
+    "socket.io-client": "^4.0.1",
+    "string-similarity-js": "^2.1.2",
+    "styled-components": "^5.3.1",
+    "ts-react-google-login-component": "^1.1.9",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "docs": "jsdoc -c ./jsdoc.json"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^11.2.6",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.9.6",
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.3.0",
+    "@types/styled-components": "^5.1.14",
+    "better-docs": "^2.3.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "jest-dom": "^4.0.0",
+    "jsdoc": "^3.6.6",
+    "react-test-render": "^1.1.2",
+    "react-test-renderer": "^17.0.2",
+    "typescript": "^3.9.10"
+  },
+  "resolutions": {
+    "enzyme-adapter-react-16": "1.15.0"
+  }
+}

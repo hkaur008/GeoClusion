@@ -1,0 +1,12 @@
+.main-footer {
+  color: black;
+  background-color: #f2eee9;
+  position: relative;
+  height: fit-content;
+  bottom: 0%;
+  width: 100%;
+}
+.college {
+  margin-left: 1em;
+  margin-right: 1em;
+}
