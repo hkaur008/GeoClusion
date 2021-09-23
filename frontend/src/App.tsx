@@ -1,17 +1,36 @@
 import "./App.css";
 import React from "react";
-
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from "react-router-dom";
-// import Login from "./pages/Login";
 import LoginButton  from "./pages/LoginButton";
 import Home from  "./pages/Home";
 import Dashboard from "./pages/Dashboard";
-import Particles from "react-particles-js";
+
+type MyComponentProps = React.PropsWithChildren<{}>;
+
+function PrivateRoute({ children, ...rest }: MyComponentProps) {
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        sessionStorage.getItem("loggedIn") ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/",
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
+  );
+}
 const App: React.FC = () => (
   <Router>
     <Switch>
@@ -20,7 +39,6 @@ const App: React.FC = () => (
       <Route path="/DashBoard" exact render={(props) => <Dashboard />} />
     </Switch>
   </Router>
-  // <Particles></Particles>
 );
 
 export default App;
