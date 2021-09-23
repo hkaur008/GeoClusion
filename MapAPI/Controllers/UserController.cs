@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MapAPI.Models;
+using MapAPI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,81 +9,72 @@ using System.Threading.Tasks;
 
 namespace MapAPI.Controllers
 {
-    public class UserController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UserController : ControllerBase
     {
-        // GET: UserController
-        public ActionResult Index()
+        private readonly ILogger<SQLDataAcessService> _sqlLogger;
+        public UserController(ILogger<SQLDataAcessService> sqlLogger)
         {
-            return View();
+            _sqlLogger = sqlLogger;
+        }
+        
+        [HttpGet]
+        public string Get()
+        {
+          string json = FetchAllUsers();
+            return json;
         }
 
-        // GET: UserController/Details/5
-        public ActionResult Details(int id)
+        
+
+        [HttpGet("{id}")]
+        public string Get(int id)
         {
-            return View();
+            return  FetchUserByID(id);
         }
 
-        // GET: UserController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: UserController/Create
+       
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public void Post([FromBody] string value)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            //TODO
         }
 
-        // GET: UserController/Edit/5
-        public ActionResult Edit(int id)
+        
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
         {
-            return View();
+            //TODO
         }
 
-        // POST: UserController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+
+        [HttpDelete("{id}")]
+        public void Delete(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            //TODO
         }
 
-        // GET: UserController/Delete/5
-        public ActionResult Delete(int id)
+        private string FetchAllUsers()
         {
-            return View();
+            var acessService = new SQLDataAcessService(_sqlLogger);
+            string sql = @"SELECT * FROM map_db.users LIMIT 0, 1000";
+            List<UserModel> modelData = acessService.LoadData<UserModel>(sql);
+            string json = JsonSerializerService.Serialize<UserModel>(modelData);
+
+            return json;
         }
 
-        // POST: UserController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        private string FetchUserByID(int id) 
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            string sql = String.Format(@"SELECT * from map_db.users
+                         WHERE map_db.users.ID = {0}", id);
+
+            var acessService = new SQLDataAcessService(_sqlLogger);
+            List<UserModel> modelData = acessService.LoadData<UserModel>(sql);
+            string json = JsonSerializerService.Serialize<UserModel>(modelData);
+
+            return json;
         }
     }
 }
