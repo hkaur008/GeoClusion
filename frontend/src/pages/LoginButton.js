@@ -9,6 +9,8 @@ import { useHistory, Redirect } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 import { OAuth2Client } from "google-auth-library";
 import { AuthContext } from "../context/context";
+import Particle  from "./Particle"
+import logo from "./logo.png";
 // import { keyframes } from "styled-components";
 // import { google } from "googleapis";
 /**
@@ -72,39 +74,54 @@ const LoginButton = () => {
     
   };
   return (
-    <div className="page-container">
-      <Header />
-      <div className="content-wrap">
-        <div className="container-fluid">
-          <div className="row main-content">
-            <div className="company__info">
-              <h1 className="company_title">Welcome Back!</h1>
-            </div>
-            <div className="login_form">
-              <div className="container-fluid">
-                <div className="invisibletext">
-                  <p>Welcome Back!</p>
+    <div>
+      <Particle />
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <div className="page-container" style={{ marginTop: "10%" }}>
+          <div className="content-wrap">
+            <div className="container-fluid">
+              <div className="row main-content">
+                <div className="company__info">
+                  <h1 className="company_title">
+                    <img src={logo} width="190" height="190" alt="Logo" marginTop="-10%"/>
+                    <br />
+                    Let's see people around you!
+                  </h1>
                 </div>
-              </div>
-              <div className="container-fluid">
-                <div className="row">
-                  <GoogleLogin
-                    render={(renderProps) => (
-                      <GoogleButton onClick={renderProps.onClick} />
-                    )}
-                    clientId={Key.GoogleClientID}
-                    buttonText="Login with google"
-                    onSuccess={responseSuccessGoogle}
-                    onFailure={responseErrorGoogle}
-                    cookiePolicy={"single_host_origin"}
-                  />
+                <div className="login_form">
+                  <div className="container-fluid">
+                    <div className="invisibletext">
+                      <p>Welcome to GeoClusion!</p>
+                    </div>
+                  </div>
+                  <div className="container-fluid">
+                    <div className="row">
+                      <GoogleLogin
+                        render={(renderProps) => (
+                          <GoogleButton onClick={renderProps.onClick} />
+                        )}
+                        clientId={Key.GoogleClientID}
+                        buttonText="Login with google"
+                        onSuccess={responseSuccessGoogle}
+                        onFailure={responseErrorGoogle}
+                        cookiePolicy={"single_host_origin"}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
