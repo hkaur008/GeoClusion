@@ -87,8 +87,13 @@ To get a local copy up and running follow these simple example steps.
 3. Create your [Google Client ID](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid)
   
 4. Enter your Client ID in `frontend/src/Key.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
+   ```TS
+
+    export const Key = {
+      GoogleClientID: 
+
+        "YOUR_CLIENT_ID",
+    };
    ```
 
 
