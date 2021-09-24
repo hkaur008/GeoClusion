@@ -9,29 +9,27 @@ using System.Threading.Tasks;
 
 namespace MapAPI.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly ILogger<SQLDataAcessService> _sqlLogger;
-        private readonly ILogger<UserController> _logger;
+        private readonly ILogger<UsersController> _logger;
         SQLDataAcessService _acessService;
-        public UserController(ILogger<UserController> logger, ILogger<SQLDataAcessService> sqlLogger, SQLDataAcessService dataAcessService)
+        public UsersController(ILogger<UsersController> logger, SQLDataAcessService dataAcessService)
         {
-            _sqlLogger = sqlLogger;
+           
             _logger = logger;
             _acessService = dataAcessService;
         }
 
-        [Route("/")]
         [HttpGet]
-       
         public string Get(string invCode)
         {
           string json = FetchAllUsers(invCode);
             return json;
         }
 
-        [Route("/")]
         [HttpGet("{id}")]
        
         public string Get(int id)
@@ -40,9 +38,7 @@ namespace MapAPI.Controllers
         }
 
 
-        [Route("/")]
         [HttpPost]
-        
         public IActionResult Post([FromBody] UserModel model)
         {
             try
@@ -58,7 +54,6 @@ namespace MapAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        [Route("/")]
         public IActionResult Put(int id, [FromBody] string value)
         {
             try
@@ -74,8 +69,6 @@ namespace MapAPI.Controllers
         }
 
 
-        
-        [Route("/")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

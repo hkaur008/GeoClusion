@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Controllers\OrganizationsController.cs~RF2f7c53f5.TMP" />
     <None Remove="Controllers\UserController.cs~RF2caa8648.TMP" />
   </ItemGroup>
 
