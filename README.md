@@ -46,12 +46,13 @@ Geoclusion allows organizations to demonstrate their inclusion culture, while en
 
 * [Typescript](https://www.typescriptlang.org/)
 * [React](https://www.typescriptlang.org/docs/handbook/react.html)
+* [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
+* [MYSQL](https://dev.mysql.com/doc/)
+* [Github actions](https://docs.github.com/en/actions)
 
 ## Challenges we ran into
 * We faced some issues deploying the api to azure 
 * Timezone challenges led to minimal overlapping hours to have live discussions  
-
-## Accomplishments that we're proud of
 
 ## What we learned
 - How to create a  and deploy a WebAPI and setup a MYSQL database and host it from scratch
@@ -60,14 +61,6 @@ Geoclusion allows organizations to demonstrate their inclusion culture, while en
     * Using issues and project tabs to manage our project
 - Substituting typescript for javascript in the frontend react webapp
 - Collaborating with peers across timezones
-
-
-## What's next for GeoClusion 
-
-
-
-
-
 
 
 <!-- CONTRIBUTING -->
