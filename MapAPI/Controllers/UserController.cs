@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace MapAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -23,23 +22,27 @@ namespace MapAPI.Controllers
             _acessService = dataAcessService;
         }
 
+        [Route("/")]
         [HttpGet]
+       
         public string Get(string invCode)
         {
           string json = FetchAllUsers(invCode);
             return json;
         }
 
-        
-
+        [Route("/")]
         [HttpGet("{id}")]
+       
         public string Get(int id)
         {
             return  FetchUserByID(id);
         }
 
-       
+
+        [Route("/")]
         [HttpPost]
+        
         public IActionResult Post([FromBody] UserModel model)
         {
             try
@@ -54,8 +57,8 @@ namespace MapAPI.Controllers
             return Ok();
         }
 
-        
         [HttpPut("{id}")]
+        [Route("/")]
         public IActionResult Put(int id, [FromBody] string value)
         {
             try
@@ -65,12 +68,14 @@ namespace MapAPI.Controllers
             catch (Exception e)
             {
                 _logger.LogError(e.Message);
-                return BadRequest("Unable to create user");
+                return BadRequest("Unable to update information");
             }
             return Ok();
         }
 
 
+        
+        [Route("/")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -78,7 +83,7 @@ namespace MapAPI.Controllers
                                         WHERE `ID` = {0};", id);
             bool isSucessful = _acessService.Query(sql);
             if (isSucessful == false) { 
-                return BadRequest("Failed to save data"); }
+                return BadRequest("Failed to delete user"); }
             return Ok();
 
         }
