@@ -16,68 +16,68 @@ import Map from "./Map";
 import "leaflet/dist/leaflet.css";
 
 const MapFrame = () => {
-  const [country, setInputCountry] = useState("worldwide");
-  const [countryInfo, setCountryInfo] = useState({});
-  const [countries, setCountries] = useState([]);
+  // const [country, setInputCountry] = useState("worldwide");
+  // const [countryInfo, setCountryInfo] = useState({});
+  // const [countries, setCountries] = useState([]);
   const [mapCountries, setMapCountries] = useState([]);
-  const [tableData, setTableData] = useState([]);
-  const [casesType, setCasesType] = useState("cases");
+  // const [tableData, setTableData] = useState([]);
+  // const [casesType, setCasesType] = useState("cases");
   const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
   const [mapZoom, setMapZoom] = useState(3);
 
-  useEffect(() => {
-    fetch("https://disease.sh/v3/covid-19/all")
-      .then((response) => response.json())
-      .then((data) => {
-        setCountryInfo(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://disease.sh/v3/covid-19/all")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setCountryInfo(data);
+  //     });
+  // }, []);
 
   useEffect(() => {
     const getCountriesData = async () => {
-      fetch("https://disease.sh/v3/covid-19/countries")
-      // fetch("https://5ecbd07d44637c0016d8d012.mockapi.io/hargun/geoclusion")
+      // fetch("https://disease.sh/v3/covid-19/countries")
+      fetch("https://5ecbd07d44637c0016d8d012.mockapi.io/hargun/geoclusion")
         .then((response) => response.json())
         .then((data) => {
-          const countries = data.map((country) => ({
-            name: country.country,
-            value: country.countryInfo.iso2,
-          }));
-          let sortedData = sortData(data);
-          setCountries(countries);
+          // const countries = data.map((country) => ({
+          //   name: country.country,
+          //   value: country.countryInfo.iso2,
+          // }));
+          console.log(data);
+          // let sortedData = sortData(data);
+          // setCountries(countries);
           setMapCountries(data);
-          setTableData(sortedData);
+          // setTableData(sortedData);
         });
     };
-
     getCountriesData();
   }, []);
 
-  console.log(casesType);
+  // console.log(casesType);
 
-  const onCountryChange = async (e) => {
-    const countryCode = e.target.value;
+  // const onCountryChange = async (e) => {
+  //   const countryCode = e.target.value;
 
-    const url =
-      countryCode === "worldwide"
-        ? "https://disease.sh/v3/covid-19/all"
-        : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
-    await fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setInputCountry(countryCode);
-        setCountryInfo(data);
-        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
-        setMapZoom(4);
-      });
-  };
+  //   const url =
+  //     countryCode === "worldwide"
+  //       ? "https://disease.sh/v3/covid-19/all"
+  //       : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
+  //   await fetch(url)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setInputCountry(countryCode);
+  //       setCountryInfo(data);
+  //       setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+  //       setMapZoom(4);
+  //     });
+  // };
 
   return (
     <div className="app" >
       <div className="app__left">
         <div className="app__header">
           <h1>GeoClusion</h1>
-          <FormControl className="app__dropdown">
+          {/* <FormControl className="app__dropdown">
             <Select
               variant="outlined"
               value={country}
@@ -88,18 +88,18 @@ const MapFrame = () => {
                 <MenuItem value={country.value}>{country.name}</MenuItem>
               ))}
             </Select>
-          </FormControl>
+          </FormControl> */}
         </div>
        
         <Map
           countries={mapCountries}
-          casesType={casesType}
+          casesType="recovered"
           center={mapCenter}
           zoom={mapZoom}
         />
          <br/>
              <div className="app__stats">
-          <InfoBox
+          {/* <InfoBox
             onClick={(e) => setCasesType("cases")}
             title="Food Preferences"
             isRed
@@ -121,7 +121,7 @@ const MapFrame = () => {
             active={casesType === "deaths"}
             cases={prettyPrintStat(countryInfo.todayDeaths)}
             total={numeral(countryInfo.deaths).format("0.0a")}
-          />
+          /> */}
      
         </div>
       </div>
@@ -130,7 +130,7 @@ const MapFrame = () => {
         <CardContent>
           <div className="app__information">
             <h3>Organisation Members by Country </h3>
-            <Table countries={tableData} />
+            {/* <Table countries={tableData} /> */}
           </div>
         </CardContent>
       </Card>

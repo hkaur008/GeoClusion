@@ -22,7 +22,7 @@ export default function Dashboard() {
     {/* <p style = {{marginLeft:"20%"}}>Invite Code: {inviteCode}</p> */}
     {/* <Map/> */}
     <MapFrame/>
-    hi
+
   </>
   )
 

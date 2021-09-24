@@ -41,7 +41,7 @@ export const prettyPrintStat = (stat) =>
 export const showDataOnMap = (data, casesType = "cases") =>
   data.map((country) => (
     <Circle
-      center={[country.countryInfo.lat, country.countryInfo.long]}
+      center={[country.lat, country.long]}
       color={casesTypeColors[casesType].hex}
       fillColor={casesTypeColors[casesType].hex}
       fillOpacity={0.4}
@@ -53,19 +53,29 @@ export const showDataOnMap = (data, casesType = "cases") =>
         <div className="info-container">
           <div
             className="info-flag"
-            style={{ backgroundImage: `url(${country.countryInfo.flag})` }}
+            style={{ backgroundImage: `url(${country.profilePicture})` }}
           ></div>
-          <div className="info-name">{country.country}</div>
-          <div className="info-confirmed">
-            Food: {numeral(country.cases).format("0,0")}
+           <div className="info-name">
+             {country.firstName}  {country.lastName}
           </div>
-          <div className="info-recovered">
-            Recovered: {numeral(country.recovered).format("0,0")}
+          <div className="info-username">@{country.username}</div>
+             <div className="info-food">
+            Food: {country.favoriteFood}
           </div>
-          <div className="info-deaths">
-            Deaths: {numeral(country.deaths).format("0,0")}
+          <div className="info-email">
+            Email: {country.email}
+          </div>
+          <div className="info-team">
+          Team: {country.team}
+          </div>
+          <div className="info-region">
+            Region: {country.region}
+          </div>
+          <div className="info-language">
+            Languages: {country.languages}
           </div>
         </div>
+
       </Popup>
     </Circle>
   ));
