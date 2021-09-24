@@ -131,7 +131,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Nandini - nandini18056@iiitd.ac.in
 Hargun - hargunalone@gmail.com
-
+La'Kaleigh Harris - lakaleigh.harris@gmail.com
+Ru Levin - RuLevin@gmail.com
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
