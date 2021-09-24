@@ -10,7 +10,8 @@
 .company__info {
   overflow-wrap: break-word;
   text-align: center;
-  background-color:rgba(29, 49, 65, 0.8);
+  background-color:#6E9887;
+  opacity: 0.8;
   width: 50%;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -35,7 +36,8 @@
   width: 50%;
   flex-direction: column;
   justify-content: center;
-  background-color: #f2eee9;
+   opacity: 0.8;
+  background-color: rgba(29, 49, 65, 0.8);;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }

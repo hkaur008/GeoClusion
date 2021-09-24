@@ -6,8 +6,8 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import LoginButton  from "./pages/LoginButton";
-import Home from  "./pages/Home";
+import LoginButton from "./pages/LoginButton";
+import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 
 type MyComponentProps = React.PropsWithChildren<{}>;
