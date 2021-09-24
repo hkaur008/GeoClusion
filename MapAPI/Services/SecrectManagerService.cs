@@ -12,8 +12,11 @@ namespace MapAPI.Services
         public static string GetSecret(string projectId = "smartgarden-iot", string secretId = "my-secret", string secretVersionId = "1")
         {
 
-            var credential = GoogleCredential.FromFile("smartgarden-iot-4131e7005a39.json");
-            SecretManagerServiceClient client = SecretManagerServiceClient.Create();
+            SecretManagerServiceClientBuilder bclient = new SecretManagerServiceClientBuilder
+            {
+                CredentialsPath = "smartgarden-iot-94fb06ac28c8.json"
+            };
+            SecretManagerServiceClient client = bclient.Build();
             SecretVersionName secretVersionName = new SecretVersionName(projectId, secretId, secretVersionId);
             
             AccessSecretVersionResponse result = client.AccessSecretVersion(secretVersionName);

@@ -71,5 +71,33 @@ namespace MapAPI.Services
             return true;
         }
 
+        public bool Query(string sql) 
+        {
+            bool isSucessful = false;
+            try
+            {
+                using (IDbConnection dbconnection = new MySqlConnection(GetConnectionString()))
+                {
+                    
+                   int rowsAffected =  dbconnection.Execute(sql);
+                    if (rowsAffected != 0) 
+                    {
+                        isSucessful = true;
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                _logger.LogError($"{ex.Message} \n Error Code: {ex.Code} \n  \n {ex.TargetSite}");
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"{ex.Message} \n \n {ex.InnerException} \n  \n {ex.TargetSite}");
+            }
+            return isSucessful;
+        }
+
     }
+
 }
