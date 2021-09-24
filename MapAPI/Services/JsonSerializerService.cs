@@ -23,10 +23,10 @@ namespace MapAPI.Services
         }
 
 
-        public static List<T> DeSerialize<T>( string json) 
+        public static T DeSerialize<T>(string json) 
         {
 
-          List<T> data =  JsonSerializer.Deserialize<List<T>>(json,
+          T data =  JsonSerializer.Deserialize<T>(json,
                 new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
