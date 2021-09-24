@@ -1,0 +1,105 @@
+.main-content {
+  border-radius: 20px;
+  box-shadow: 6px 2px 10px 5px rgba(0, 0, 0, 0.4);
+  width: 80%;
+  height: 400px;
+  margin: 5em auto;
+  display: flex;
+}
+
+.company__info {
+  overflow-wrap: break-word;
+  text-align: center;
+  background-color:#6E9887;
+  opacity: 0.8;
+  width: 50%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.invisibletext {
+  display: none;
+}
+
+.row > h2 {
+  width: 100%;
+  color: #008080;
+}
+
+.login_form {
+  align-items: center;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+   opacity: 0.8;
+  background-color: rgba(29, 49, 65, 0.8);;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.page-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.google {
+  width: inherit;
+}
+
+.content-wrap {
+  flex: 1;
+}
+
+@media screen and (min-width: 200px) and (max-width: 1000px) {
+  .main-content {
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    width: 80%;
+    box-shadow: 10px 2px 10px 4px rgba(0, 0, 0, 0.4);
+  }
+  .company__info {
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    display: none;
+  }
+
+  .invisibletext {
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    display: initial;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+  }
+
+  .login_form {
+    transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    align-items: center;
+    display: inline-flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    background-color:rgba(29, 49, 65, 0.8);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+}
