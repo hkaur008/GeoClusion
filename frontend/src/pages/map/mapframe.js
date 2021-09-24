@@ -73,7 +73,7 @@ const MapFrame = () => {
   };
 
   return (
-    <div className="app">
+    <div className="app" >
       <div className="app__left">
         <div className="app__header">
           <h1>GeoClusion</h1>
@@ -122,14 +122,7 @@ const MapFrame = () => {
             cases={prettyPrintStat(countryInfo.todayDeaths)}
             total={numeral(countryInfo.deaths).format("0.0a")}
           />
-        <InfoBox
-            onClick={(e) => setCasesType("deaths")}
-            title="Recreational Activities"
-            isRed
-            active={casesType === "deaths"}
-            cases={prettyPrintStat(countryInfo.todayDeaths)}
-            total={numeral(countryInfo.deaths).format("0.0a")}
-          />
+     
         </div>
       </div>
 
@@ -138,8 +131,6 @@ const MapFrame = () => {
           <div className="app__information">
             <h3>Organisation Members by Country </h3>
             <Table countries={tableData} />
-            {/* <h3>Members Around the world {casesType} 🌎</h3> */}
-            {/* <LineGraph casesType={casesType} /> */}
           </div>
         </CardContent>
       </Card>
