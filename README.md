@@ -40,6 +40,8 @@ We drew our inspiration from our own personal experience at MLH! As part of an i
 ## What it does
 Geoclusion allows organizations to demonstrate their inclusion culture, while encouraging connections between like-minded members. Organizations sign up for a unique id, which they provide to their members to create personal profiles. Members can customize their profiles with their geographic data, food preferences and various hobbies. Other users can then connect with fellow organization members from across the globe using an interactive map.  Users can find a new hiking buddy, or organize meetups with members in their area.
 
+![image](https://user-images.githubusercontent.com/56452820/134598225-e940f8f4-f18a-4f2e-b67c-4a8df6b3c5ee.png)
+
 ### Built With
 
 * [Typescript](https://www.typescriptlang.org/)
