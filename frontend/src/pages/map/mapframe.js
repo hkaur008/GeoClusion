@@ -5,13 +5,12 @@ import {
   FormControl,
   Select,
   Card,
-  CardContent,
+  CardContent,Button,TextField , Dialog, DialogTitle , DialogContentText,DialogActions , DialogContent
 } from "@material-ui/core";
+
 import InfoBox from "./InfoBox";
-// import LineGraph from "./LineGraph";
 import Table from "./Table";
-import { sortData, prettyPrintStat } from "./util";
-import numeral from "numeral";
+import { sortData } from "./util";
 import Map from "./Map";
 import "leaflet/dist/leaflet.css";
 
@@ -25,6 +24,15 @@ const MapFrame = () => {
   const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
   const [mapZoom, setMapZoom] = useState(3);
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     const getCountriesData = async () => {
@@ -62,6 +70,9 @@ const MapFrame = () => {
       <div className="app__left">
         <div className="app__header">
           <h1>GeoClusion</h1>
+          <Button variant="outlined" onClick={handleClickOpen}>
+        Update Your Profile
+      </Button>
           <FormControl className="app__dropdown">
             <Select
               variant="outlined"
@@ -74,6 +85,122 @@ const MapFrame = () => {
               ))}
             </Select>
           </FormControl>
+          {/* profile */}
+        <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Update Profile</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Please enter your details to create or Update your profile !
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="email"
+            label="Email Address"
+            type="email"
+            fullWidth
+            variant="standard"
+          />
+             <TextField
+            autoFocus
+            margin="dense"
+            id="firstname"
+            label="First Name"
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+           <TextField
+            autoFocus
+            margin="Last"
+            id="firstname"
+            label="Last Name"
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+          <TextField
+            autoFocus
+            margin="Last"
+            id="lat"
+            label="Latitude"
+            type="text"
+            variant="standard"
+          />
+            <TextField
+            autoFocus
+            margin="Last"
+            id="long"
+            label="Longitude"
+            type="text"
+            variant="standard"
+          />
+            <TextField
+            autoFocus
+            margin="Last"
+            id="code"
+            label="Country Code"
+            type="text"
+            variant="standard"
+          />
+            <TextField
+            autoFocus
+            margin="Last"
+            id="country"
+            label="Country"
+            type="text"
+            variant="standard"
+          />
+           <TextField
+            autoFocus
+            margin="Last"
+            id="team"
+            label="Team"
+            type="text"
+            variant="standard"
+          />
+           <TextField
+            autoFocus
+            margin="Last"
+            id="company"
+            label="company"
+            type="text"
+            variant="standard"
+          />
+             <TextField
+            autoFocus
+            margin="Last"
+            id="food"
+            label="What are your Food Preferences ?"
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+              <TextField
+            autoFocus
+            margin="Last"
+            id="language"
+            label="What languages you can speak?"
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+           <TextField
+            autoFocus
+            margin="Last"
+            id="interest"
+            label="Any hobbies or interest ?"
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Update Profile</Button>
+        </DialogActions>
+      </Dialog>
+
         </div>
        
         <Map
