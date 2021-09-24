@@ -92,6 +92,16 @@ Contributions are what make the open source community such an amazing place to l
 * Ru Levin - RuLevin@gmail.com
 
 
+## Design
+![image](https://user-images.githubusercontent.com/56452820/134704215-2e38614e-0a49-4c22-b1d7-ee983359f416.png)
+![image](https://user-images.githubusercontent.com/56452820/134704263-47f3e5de-91de-4b09-b26d-ca5e5e030347.png)
+![image](https://user-images.githubusercontent.com/56452820/134704356-98df7f5e-2be5-48e7-9f42-0f8183353e82.png)
+![image](https://user-images.githubusercontent.com/56452820/134704509-dcbe0946-1be7-480c-ab23-a9b52f3b51ae.png)
+![image](https://user-images.githubusercontent.com/56452820/134704527-12b7cbbf-f89d-4d50-8335-359c28c81f08.png)
+![image](https://user-images.githubusercontent.com/56452820/134704580-f5540387-631f-4cae-b074-b070a8e684cb.png)
+
+
+Color Palet : [Earthy Colors inspired from earth](https://coolors.co/7871aa-122c34-f2fdff-6e9887-101935)
 
 
 
